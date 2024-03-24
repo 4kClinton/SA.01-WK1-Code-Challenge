@@ -10,13 +10,13 @@ function calculateTax(income){
         //Tax rate of 10% for income of upto 24k
         {limit: 24000, rate: 0.1},
 
-         //Tax rate of 25% for income of upto 24k
+         //Tax rate of 25% for income of upto 32k
          {limit: 32333, rate:0.25},
 
-          //Tax rate of 30% for income of upto 24k
+          //Tax rate of 30% for income of upto 500k
           {limit:500000, rate: 0.3},
 
-           //Tax rate of 35% for income of upto 24k
+           //Tax rate of 35% for income of upto 800k
            {limit: 800000, rate: 0.35},
 
     ];
@@ -71,7 +71,7 @@ function calculateNSSFContributions(pensionalPay){
     const tierIILowestLimit = 7001; 
 
 if(pensionalPay <= tierIILowestLimit){
-    //is it within? calc contr based on tier 1 rate
+    //is it within? calculate contr based on tier 1 rate
     return pensionalPay * tierIRate;
 } else {
     //if it exceeds
@@ -79,15 +79,15 @@ if(pensionalPay <= tierIILowestLimit){
 }
 }
 
-//calc our net salary
+//calculating our net salary
 function calculateNetSalary(basicSalary, benefits){
-    //calc gross salary>>> adding basic salary and benefits
+    //calculating gross salary>>> adding basic salary and benefits
     const grossSalary = basicSalary + benefits;
-    //calc tax 
+    //calculating tax 
     const tax = calculateTax(grossSalary);
-    //calc NHIF decuctions based on grosssalary
+    //calculating NHIF decuctions based on grosssalary
     const NHIFDeductions = calculateNHIFDeductions(grossSalary);
-    //calc NSSF ded based on basic
+    //calculating NSSF ded based on basic
     const NSSFDeductions = calculateNSSFContributions(basicSalary);
     //net salary>> sub tax,nhif ded, & nssf ded from gross salary
     const netSalary = grossSalary - tax - NHIFDeductions - NSSFDeductions;
@@ -126,7 +126,7 @@ function getUserInput(question){
     //get user benefits 
     const benefits = await getUserInput("Your Benefits = ");
 
-    //calc net salary in response to user input
+    //calculating net salary in response to user input
     const salaryDetails = calculateNetSalary(basicSalary, benefits);
 
     //display the calc
