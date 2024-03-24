@@ -1,23 +1,30 @@
 
 // identify the grade limits
-let Grade = Number>=0 && Number<=100
-Grade = 65
+let Grade = Number>=0 && Number<=100;
+
+// declare grade
+Grade = 80
 
 // 
+function yourGrade() {
+    
+
 if(Grade >79){
-    return ("A")
+    console.log("A");
 }
 else if(Grade>60 && Grade<79){
-    return("B")
+    console.log("B");
 }
 else if(Grade>49 && Grade<59){
-    return("C")
+    console.log("C");
 }
 else if(Grade>40 && Grade<49){
-return ("D")
+    console.log("D");
 }
 else()=>{
-    return("E")
+    console.log("E");
+}
+
 }
 
 

@@ -1,13 +1,21 @@
-let Speed = 50;
+
+
+// declare speed
+let speed = 100;
+
+// Declare Speed Limit
 const speedLimit = 70;
 
-if(Speed<70){
-    console.log("Ok");
-}
-else if(Speed==speedLimit + 5){
-    console.log("DEMERIT:1");
-}
-for (let DEMERIT = 0; DEMERIT < Speed++;) {
-      
+// Define Value of Demerit and how it works
+const Demerit = Math.abs((speed - speedLimit)/5)
 
-    }
+// add Conditions 
+if (speed <=70){
+    console.log("OK");
+}
+else if(Demerit>12){
+    console.log("License Suspended");
+}
+else if (speed > 70) {
+    console.log("Demerit" +Demerit);
+}
